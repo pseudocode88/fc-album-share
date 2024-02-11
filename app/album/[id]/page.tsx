@@ -15,8 +15,6 @@ export async function generateMetadata(
     const id = params.id
     const album = await getAlbum(id)
 
-    console.log(id, album);
-
     const fcMetadata: Record<string, string> = {
         "fc:frame": "vNext",
         "fc:frame:image": `${process.env['HOST']}api/image?id=${id}`
@@ -59,7 +57,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     return (
         <>
             <main className={styles.main}>
-                <h1>Hello</h1>
+                <img src={process.env['HOST'] + 'api/image?id=' + params.id}></img>
             </main>
         </>
     );
