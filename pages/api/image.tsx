@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.log('api/image');
 
     try {
-        const albumId = req.query['id']
+        const albumId = req.query['id'];
 
         if (!albumId) {
             return res.status(400).send('Missing album ID');
@@ -45,7 +45,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const style = {
             wrapper: {
                 display: 'flex',
-                position: 'relative',
+                // position: 'relative',
                 width: '100%',
                 height: '100%',
                 background: '#ffffff',
@@ -54,7 +54,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 width: '100%',
                 height: '100%',
                 filter: 'blur(24px)',
-                position: 'absolute',
+                // position: 'absolute',
                 opacity: '0.7'
             },
 
@@ -117,7 +117,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
             titleWrapper: {
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: "column",
                 gap: '4px'
             }
 
@@ -126,12 +126,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const svg = await satori(
             <div style={style.wrapper}>
                 <div style={style.wrapperimg}></div>
-                <div style={style.card}>
+                <div style={style.card as React.CSSProperties}>
                     <div style={style.cardimage}>
                         <img style={style.image} src={album.albumart} />
                     </div>
-                    <div style={style.carddetails}>
-                        <div style={style.titleWrapper}>
+                    <div style={style.carddetails as React.CSSProperties}>
+                        <div style={style.titleWrapper as React.CSSProperties}>
                             <h1 style={style.name}>{album.name}</h1>
                             <h2 style={style.artist}>by {album.artist}</h2>
                         </div>

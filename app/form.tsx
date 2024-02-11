@@ -3,8 +3,13 @@
 import styles from "./form.module.css";
 import { useOptimistic, useRef, useState, useTransition } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { Album } from './types'
 
-export function CreateAlbumForm({ onSubmit }) {
+interface Props {
+    onSubmit: (album: Album) => void;
+}
+
+export function CreateAlbumForm({ onSubmit }: Props) {
 
     let formRef = useRef<HTMLFormElement>(null)
 
@@ -12,13 +17,13 @@ export function CreateAlbumForm({ onSubmit }) {
     let [errorArtist, setErrorArtist] = useState(false);
     let [errorSource, setErrorSource] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
         let isFormValid = true;
 
-        let album = {
+        let album: Album = {
             id: uuidv4(),
             name: formData.get("album") as string,
             artist: formData.get("artist") as string,

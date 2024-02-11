@@ -1,9 +1,9 @@
 "use server";
 
 import clientPromise from "../lib/mongodb";
+import { Album } from './types'
 
-
-export async function saveAlbum(album) {
+export async function saveAlbum(album: Album) {
     const client = await clientPromise;
     const db = client.db("fc-music-share");
 
@@ -11,7 +11,7 @@ export async function saveAlbum(album) {
     await db.collection("albums").insertMany([album]);
 }
 
-export async function getAlbum(id) {
+export async function getAlbum(id: string | string[]) {
     const client = await clientPromise;
     const db = client.db("fc-music-share");
 
