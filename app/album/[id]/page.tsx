@@ -22,26 +22,26 @@ export async function generateMetadata(
         "fc:frame:image": `${process.env['HOST']}/api/image?id=${id}`
     };
 
-    if (album.youtube.length > 0) {
+    if (album?.youtube?.length > 0) {
         fcMetadata[`fc:frame:button:youtube`] = 'link';
-        fcMetadata[`fc:frame:button:youtube:target`] = album.youtube;
+        fcMetadata[`fc:frame:button:youtube:target`] = album?.youtube;
     }
 
-    if (album.apple.length > 0) {
+    if (album?.apple?.length > 0) {
         fcMetadata[`fc:frame:button:apple`] = 'link';
-        fcMetadata[`fc:frame:button:apple:target`] = album.apple;
+        fcMetadata[`fc:frame:button:apple:target`] = album?.apple;
     }
 
-    if (album.spotify.length > 0) {
+    if (album?.spotify?.length > 0) {
         fcMetadata[`fc:frame:button:spotify`] = 'link';
-        fcMetadata[`fc:frame:button:spotify:target`] = album.spotify;
+        fcMetadata[`fc:frame:button:spotify:target`] = album?.spotify;
     }
 
 
     return {
-        title: album.name,
+        title: album?.name,
         openGraph: {
-            title: album.name,
+            title: album?.name,
             images: [`/api/image?id=${id}`],
         },
         other: {
