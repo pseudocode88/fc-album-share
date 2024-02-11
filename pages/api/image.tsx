@@ -45,7 +45,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const style = {
             wrapper: {
                 display: 'flex',
-                // position: 'relative',
+                position: 'relative',
                 width: '100%',
                 height: '100%',
                 background: '#ffffff',
@@ -54,7 +54,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 width: '100%',
                 height: '100%',
                 filter: 'blur(24px)',
-                // position: 'absolute',
+                position: 'absolute',
                 opacity: '0.7'
             },
 
@@ -124,8 +124,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
 
         const svg = await satori(
-            <div style={style.wrapper}>
-                <div style={style.wrapperimg}></div>
+            <div style={style.wrapper as React.CSSProperties}>
+                <div style={style.wrapperimg as React.CSSProperties}></div>
                 <div style={style.card as React.CSSProperties}>
                     <div style={style.cardimage}>
                         <img style={style.image} src={album.albumart} />
@@ -163,7 +163,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     weight: 500
                 }]
             })
-
+        console.log(svg);
         // Convert SVG to PNG using Sharp
         const pngBuffer = await sharp(Buffer.from(svg))
             .toFormat('png')
