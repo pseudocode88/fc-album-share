@@ -19,7 +19,7 @@ export async function generateMetadata(
 
     const fcMetadata: Record<string, string> = {
         "fc:frame": "vNext",
-        "fc:frame:image": `${process.env['HOST']}/api/image?id=${id}`
+        "fc:frame:image": `${process.env['HOST']}api/image?id=${id}`
     };
 
     if (album?.youtube?.length > 0) {
