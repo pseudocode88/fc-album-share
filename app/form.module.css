@@ -1,0 +1,60 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 400px;
+}
+
+.controlGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.controlGroup label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.controlGroup input[type=text] {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #bbbbbb;
+    border-radius: 6px;
+}
+
+.controlGroup input[type=text]::placeholder {
+    color: #bbb9b9;
+}
+
+.controlGroup button {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    background-color: #27ae60;
+    color: #fff;
+    border-radius: 6px;
+    border: 0;
+}
+
+.required {
+    color: red;
+}
+
+.subheading {
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+.muted {
+    color: #808080;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    font-weight: 400;
+}
