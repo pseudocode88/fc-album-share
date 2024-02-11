@@ -3,12 +3,19 @@ import { Metadata, ResolvingMetadata } from "next";
 import styles from "../../page.module.css";
 import { getAlbum } from '@/app/store';
 
+
+type Props = {
+    params: { id: string }
+}
+
 export async function generateMetadata(
-    { params, searchParams }: Props,
+    { params }: Props,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const id = params.id
     const album = await getAlbum(id)
+
+    console.log(id, album);
 
     const fcMetadata: Record<string, string> = {
         "fc:frame": "vNext",
