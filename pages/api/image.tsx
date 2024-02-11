@@ -65,11 +65,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 backgroundColor: '#ffffff99',
                 padding: "32px 32px 32px 32px",
                 boxSizing: 'border-box',
-                gap: 32
+                gap: 32,
+                alignItems: 'center'
             },
             cardimage: {
                 display: 'flex',
-                width: '40%',
+                width: '38%',
                 flexShrink: 0,
             },
             image: {
@@ -85,7 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             },
             name: {
                 fontFamily: 'Roboto',
-                fontSize: 24,
+                fontSize: 21,
                 fontWeight: 800,
                 lineHeight: 1.35,
                 margin: 0,
