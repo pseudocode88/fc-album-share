@@ -23,18 +23,18 @@ export async function generateMetadata(
     };
 
     if (album?.youtube?.length > 0) {
-        fcMetadata[`fc:frame:button:youtube`] = 'link';
-        fcMetadata[`fc:frame:button:youtube:target`] = album?.youtube;
+        fcMetadata[`fc:frame:button:1`] = 'link';
+        fcMetadata[`fc:frame:button:1:target`] = album?.youtube;
     }
 
     if (album?.apple?.length > 0) {
-        fcMetadata[`fc:frame:button:apple`] = 'link';
-        fcMetadata[`fc:frame:button:apple:target`] = album?.apple;
+        fcMetadata[`fc:frame:button:2`] = 'link';
+        fcMetadata[`fc:frame:button:2:target`] = album?.apple;
     }
 
     if (album?.spotify?.length > 0) {
-        fcMetadata[`fc:frame:button:spotify`] = 'link';
-        fcMetadata[`fc:frame:button:spotify:target`] = album?.spotify;
+        fcMetadata[`fc:frame:button:3`] = 'link';
+        fcMetadata[`fc:frame:button:3:target`] = album?.spotify;
     }
 
 
