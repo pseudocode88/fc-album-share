@@ -23,17 +23,20 @@ export async function generateMetadata(
     };
 
     if (album?.youtube?.length > 0) {
-        fcMetadata[`fc:frame:button:1`] = 'link';
+        fcMetadata[`fc:frame:button:1`] = 'Youtube';
+        fcMetadata[`fc:frame:button:1:action`] = 'link';
         fcMetadata[`fc:frame:button:1:target`] = album?.youtube;
     }
 
     if (album?.apple?.length > 0) {
-        fcMetadata[`fc:frame:button:2`] = 'link';
+        fcMetadata[`fc:frame:button:2`] = 'Apple Music';
+        fcMetadata[`fc:frame:button:2:action`] = 'link';
         fcMetadata[`fc:frame:button:2:target`] = album?.apple;
     }
 
     if (album?.spotify?.length > 0) {
-        fcMetadata[`fc:frame:button:3`] = 'link';
+        fcMetadata[`fc:frame:button:3`] = 'Spotify';
+        fcMetadata[`fc:frame:button:3:action`] = 'link';
         fcMetadata[`fc:frame:button:3:target`] = album?.spotify;
     }
 
