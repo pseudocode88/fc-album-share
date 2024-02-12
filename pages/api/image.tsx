@@ -4,6 +4,7 @@ import { getAlbum } from '@/app/store';
 import satori from "satori";
 import { join } from 'path';
 import * as fs from "fs";
+import path from 'path';
 
 
 const fontPath = join(process.cwd(), 'Roboto-Regular.ttf')
@@ -25,8 +26,6 @@ const font = {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-
-    console.log('api/image');
 
     try {
         const albumId = req.query['id'];
@@ -53,9 +52,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             wrapperimg: {
                 width: '100%',
                 height: '100%',
-                filter: 'blur(24px)',
+                filter: 'blur(4px)',
                 position: 'absolute',
-                opacity: '0.7'
+                opacity: '0.3',
+                // background: 'url(' + album.albumart + ')'
             },
 
             card: {
@@ -82,7 +82,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 display: 'flex',
                 flexShrink: 1,
                 flexDirection: 'column',
-                gap: '24px'
+                gap: '18px'
             },
             name: {
                 fontFamily: 'Roboto',
@@ -95,14 +95,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             artist: {
                 fontSize: 18,
                 fontFamily: 'Roboto',
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: 1.35,
                 margin: 0,
                 color: "#333333"
             },
 
             year: {
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: 500,
                 lineHeight: 1.5,
                 margin: 0,
@@ -124,19 +124,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         }
 
+        const placeholder = process.env['HOST'] + 'album-placeholder.jpg';
+
         const svg = await satori(
             <div style={style.wrapper as React.CSSProperties}>
                 <div style={style.wrapperimg as React.CSSProperties}></div>
                 <div style={style.card as React.CSSProperties}>
                     <div style={style.cardimage}>
-                        <img style={style.image} src={album.albumart} />
+                        <img style={style.image} src={album.albumart ? album.albumart : placeholder} />
                     </div>
                     <div style={style.carddetails as React.CSSProperties}>
                         <div style={style.titleWrapper as React.CSSProperties}>
                             <h1 style={style.name}>{album.name}</h1>
                             <h2 style={style.artist}>by {album.artist}</h2>
                         </div>
-                        <p style={style.year}>{album.year} • {album.country} • {album.genre}</p>
+                        <p style={style.year}>{album.year} {album.year ? '•' : null} {album.country} {album.country ? '•' : null} {album.genre}</p>
                     </div>
                 </div>
             </div>

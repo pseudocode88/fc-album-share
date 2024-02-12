@@ -67,19 +67,19 @@ export function CreateAlbumForm({ onSubmit }: Props) {
     return (
         <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
             <div className={styles.controlGroup}>
-                <h2 className={styles.subheading}>Album Details</h2>
+                <h2 className={styles.subheading}>Album Info</h2>
                 <p className={styles.muted}>Enter the details about the album that you like to share</p>
             </div>
 
             <div className={styles.controlGroup}>
                 <label>Album name <span className={styles.required}>*</span></label>
-                <input type="text" name="album"></input>
+                <input type="text" name="album" placeholder="With The Beatles"></input>
                 {errorAlbum ? <span className={styles.error}>Album name is required</span> : null}
             </div>
 
             <div className={styles.controlGroup}>
                 <label>Artist <span className={styles.required}>*</span></label>
-                <input type="text" name="artist"></input>
+                <input type="text" name="artist" placeholder="The Beatles"></input>
                 {errorArtist ? <span className={styles.error}>Artist name is required</span> : null}
             </div>
 
@@ -88,19 +88,21 @@ export function CreateAlbumForm({ onSubmit }: Props) {
                 <input type="text" name="albumart"></input>
             </div>
 
-            <div className={styles.controlGroup}>
-                <label>Year</label>
-                <input type="text" name="year"></input>
-            </div>
+            <div className={styles.twocol}>
+                <div className={styles.controlGroup}>
+                    <label>Year</label>
+                    <input type="text" name="year" placeholder="1963"></input>
+                </div>
 
-            <div className={styles.controlGroup}>
-                <label>Country</label>
-                <input type="text" name="country"></input>
+                <div className={styles.controlGroup}>
+                    <label>Country</label>
+                    <input type="text" name="country" placeholder="UK"></input>
+                </div>
             </div>
 
             <div className={styles.controlGroup}>
                 <label>Genre, Style and Mood (comma seperated)</label>
-                <input type="text" placeholder="hip-hop, instrumental, rap, uplifing" name="genre"></input>
+                <input type="text" placeholder="Merseybeat, Pop Rock, Rock & Roll, British Rhythm & Blues, Love, Melodic, Romantic" name="genre"></input>
             </div>
 
             <div className={styles.controlGroup}>
@@ -125,7 +127,7 @@ export function CreateAlbumForm({ onSubmit }: Props) {
             </div>
 
             <div className={styles.controlGroup}>
-                <button type="submit">Generate frame</button>
+                <button type="submit">Create your frame</button>
             </div>
         </form>
     );

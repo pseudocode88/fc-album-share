@@ -17,3 +17,11 @@ export async function getAlbum(id: string | string[]) {
 
     return await db.collection("albums").findOne({ id: id });
 }
+
+export async function getAlbumCount() {
+    const client = await clientPromise;
+    const db = client.db("fc-music-share");
+
+    const col = await db.collection("albums").find({}).toArray;
+    return col.length;
+}
