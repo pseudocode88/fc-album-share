@@ -21,10 +21,11 @@
   font-weight: 500;
   letter-spacing: 0.2px;
   padding: 18px;
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #27ae60;
   border-radius: 12px;
   border: 0;
+  text-align: center;
 }
 
 /* .subheading {
@@ -77,6 +78,7 @@
   padding: 24px;
   border-radius: 24px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 6px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
 }
 
 .subheading {
@@ -97,4 +99,116 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #ffffff99;
+  padding: 0px 0px 32px 0px;
+  box-sizing: border-box;
+  gap: 24px;
+  /* align-items: center; */
+}
+
+.imageWrapper {
+  display: flex;
+  width: 38%;
+  flex-shrink: 0;
+}
+
+.imageWrapper img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 0;
+  color: #333333;
+}
+
+.artist {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+  color: #333333;
+}
+
+.genre {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+  color: #808080;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.linkWrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.linkWrapper a {
+  width: 100%;
+  padding: 14px 12px;
+  text-decoration: none;
+  background-color: #fafafa;
+  border-radius: 12px;
+  line-height: 1;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f8e4d;
+  border: 1px solid #ddd;
+}
+
+.linkWrapper a:hover {
+  background-color: #e5fff0;
+}
+
+.backbutton {
+  color: #27ae60;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+.backbutton:hover {
+  /* color: #333333; */
+  text-decoration: underline;
+}
+
+.credit {
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #808080;
+}
+
+.credit a {
+  text-decoration: underline;
+}
+
+.newtab {
+  transform: rotate(90deg);
+  display: inline-block;
 }

@@ -54,6 +54,7 @@ export default function Home() {
           <CreateAlbumForm onSubmit={handleOnFormSubmit}></CreateAlbumForm>
         }
       </div>
+      <p className={styles.credit}>Made by <a href="https://warpcast.com/pseudocode">@pseudocode</a></p>
       {/* <img src="banner.png" /> */}
     </main>
   );

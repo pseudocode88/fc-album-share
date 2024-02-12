@@ -1,0 +1,75 @@
+@keyframes updownbirds {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes updownclouds {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.Bird {
+    position: fixed;
+    z-index: -1;
+    animation-name: updownbirds;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.BirdRight {
+    width: 30px;
+    bottom: 50px;
+    right: 50px;
+}
+
+.BirdLeft {
+    width: 50px;
+    bottom: 90px;
+    left: 50px;
+}
+
+.BirdMiddle {
+    width: 20px;
+    bottom: 20px;
+    right: 100px;
+}
+
+.Cloud {
+    position: fixed;
+    z-index: -2;
+    animation-name: updownclouds;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.CloudRight {
+    width: 200px;
+    bottom: -30px;
+    right: -30px;
+}
+
+.CloudLeft {
+    width: 150px;
+    bottom: 0px;
+    left: 30px;
+}
