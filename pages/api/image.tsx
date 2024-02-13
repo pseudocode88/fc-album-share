@@ -63,9 +63,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 width: '100%',
                 height: '100%',
                 backgroundColor: '#ffffff99',
-                padding: "32px 32px 32px 32px",
+                padding: "40px",
                 boxSizing: 'border-box',
-                gap: 32,
+                gap: 40,
                 alignItems: 'center'
             },
             cardimage: {
@@ -82,18 +82,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 display: 'flex',
                 flexShrink: 1,
                 flexDirection: 'column',
-                gap: '18px'
+                gap: '24px'
             },
             name: {
                 fontFamily: 'Roboto',
-                fontSize: 21,
+                fontSize: 32,
                 fontWeight: 800,
                 lineHeight: 1.35,
                 margin: 0,
                 color: "#333333"
             },
             artist: {
-                fontSize: 18,
+                fontSize: 21,
                 fontFamily: 'Roboto',
                 fontWeight: 500,
                 lineHeight: 1.35,
@@ -102,7 +102,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             },
 
             year: {
-                fontSize: 15,
+                fontSize: 18,
                 fontWeight: 500,
                 lineHeight: 1.5,
                 margin: 0,
