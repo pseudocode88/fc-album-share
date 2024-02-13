@@ -62,7 +62,7 @@ export default async function Page({ params }: Props) {
                 <div className={styles.heading}>
                     <h1>Share Your Favorite Albums on Farcaster</h1>
                     <p>Express yourself through music with beautiful, shareable album frames. Share your music, share your style! Create your frame now!</p>
-                    <a className={styles.backbutton} href="/">Create new frame →</a>
+                    <a className={styles.backbutton} href="/">Share your albums →</a>
                 </div>
                 <div className={styles.formCard}>
                     <div>

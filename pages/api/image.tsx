@@ -144,7 +144,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             </div>
             ,
             {
-                width: 535, height: 280, fonts: [{
+                width: 963, height: 508, fonts: [{
                     data: font.robotoRegular,
                     name: 'Roboto',
                     style: 'normal',
