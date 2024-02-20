@@ -102,7 +102,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             },
 
             year: {
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: 500,
                 lineHeight: 1.5,
                 margin: 0,
